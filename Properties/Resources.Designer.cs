@@ -88,11 +88,20 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 81,3,81,50,150,0|5%100,7%100.
+        /// </summary>
+        internal static string RecoilBlade_L {
+            get {
+                return ResourceManager.GetString("RecoilBlade_L", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 81,3,81,50,150,0|6%100,4%100.
         /// </summary>
-        internal static string RecoilBlade {
+        internal static string RecoilBlade_R {
             get {
-                return ResourceManager.GetString("RecoilBlade", resourceCulture);
+                return ResourceManager.GetString("RecoilBlade_R", resourceCulture);
             }
         }
         

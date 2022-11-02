@@ -23,7 +23,6 @@ namespace MyOWOVest
         public bool suitDisabled = true;
         public bool systemInitialized = false;
         // Event to start and stop the heartbeat thread
-        private static ManualResetEvent HeartBeat_mrse = new ManualResetEvent(false);
         public Dictionary<String, ISensation> FeedbackMap = new Dictionary<String, ISensation>();
 
 
@@ -42,17 +41,6 @@ namespace MyOWOVest
         public static ISensation Reloading = Reload1.ContinueWith(Reload2);
         */
 
-        public void HeartBeatFunc()
-        {
-            while (true)
-            {
-                // Check if reset event is active
-                HeartBeat_mrse.WaitOne();
-                OWO.Send(Sensation.HeartBeat, Muscle.Pectoral_L);
-                Thread.Sleep(600);
-            }
-        }
-
         public TactsuitVR()
         {
             LOG("Initializing suit");
@@ -67,9 +55,7 @@ namespace MyOWOVest
             }
             if (suitDisabled) LOG("Owo is not enabled?!?!");
 
-            LOG("Starting HeartBeat thread...");
-            Thread HeartBeatThread = new Thread(HeartBeatFunc);
-            HeartBeatThread.Start();
+            LOG("Started up...");
             PlayBackFeedback("Start");
         }
 
@@ -111,24 +97,10 @@ namespace MyOWOVest
         }
 
 
-        public void PlayBackHit()
+        public void Recoil(bool isRightHand)
         {
-            Sensation sensation = Sensation.ShotEntry;
-            // two parameters can be given to the pattern to move it on the vest:
-            // 1. An angle in degrees [0, 360] to turn the pattern to the left
-            // 2. A shift [-0.5, 0.5] in y-direction (up and down) to move it up or down
-            OWO.Send(sensation, Muscle.Pectoral_L, Muscle.Pectoral_R);
-        }
-
-        public void Recoil(bool isRightHand, bool isTwoHanded = false)
-        {
-            if (isTwoHanded)
-            {
-                OWO.Send(Sensation.GunRecoil, Muscle.Arm_R.WithIntensity(70), Muscle.Arm_L.WithIntensity(70));
-                return;
-            }
-            if (isRightHand) OWO.Send(Sensation.GunRecoil, Muscle.Arm_R.WithIntensity(70));
-            else OWO.Send(Sensation.GunRecoil, Muscle.Arm_L.WithIntensity(70));
+            if (isRightHand) PlayBackFeedback("RecoilBlade_R");
+            else PlayBackFeedback("RecoilBlade_L");
         }
 
         public void PlayBackFeedback(string feedback)

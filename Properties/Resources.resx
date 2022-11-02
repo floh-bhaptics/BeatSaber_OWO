@@ -127,8 +127,11 @@
   <data name="MissedNote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\OwoSensations\MissedNote.owo;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="RecoilBlade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\OwoSensations\RecoilBlade.owo;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="RecoilBlade_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\OwoSensations\RecoilBlade_L.owo;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="RecoilBlade_R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\OwoSensations\RecoilBlade_R.owo;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Start" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\OwoSensations\Start.owo;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

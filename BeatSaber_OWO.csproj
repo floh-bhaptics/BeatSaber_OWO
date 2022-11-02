@@ -134,7 +134,8 @@
     <None Include="OwoSensations\Explosion.owo" />
     <None Include="OwoSensations\HitWall.owo" />
     <None Include="OwoSensations\MissedNote.owo" />
-    <None Include="OwoSensations\RecoilBlade.owo" />
+    <None Include="OwoSensations\RecoilBlade_L.owo" />
+    <None Include="OwoSensations\RecoilBlade_R.owo" />
     <None Include="OwoSensations\Start.owo" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -99,8 +99,6 @@ namespace OwoFunctional
                 bool isRight = false;
                 if (saber.saberType == SaberType.SaberB) isRight = true;
                 tactsuitVr.Recoil(isRight);
-                //tactsuitVr.LOG("Hit: " + saber.name);
-                //tactsuitVr.PlaybackHaptics("HeartBeat");
             }
         }
         
@@ -117,7 +115,6 @@ namespace OwoFunctional
                 {
                     tactsuitVr.PlayBackFeedback("HitWall");
                 }
-                //tactsuitVr.PlaySpecialEffect("HitByWall");
             }
         }
         
