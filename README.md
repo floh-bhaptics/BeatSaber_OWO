@@ -1,21 +1,13 @@
-# bhapticsFunctional
+# BeatSaber_OWO
 
-This mod hooks into a few functions in Beat Saber and provides matching haptic feedback in the bHaptics vest, arms, and hands. Feedback currently includes:
+This mod hooks into a few functions in Beat Saber and provides matching haptic feedback in the OwO skin. Feedback currently includes:
 * Slicing blocks (left and right)
 * Exploding bombs
 * Missed blocks
 * Hitting an obstacle
-* Celebration or fail effect when finishing a level
-
-I made a second *"bHapticsMusical"* mod that will provide feedback matching to the music, hence the "Functional" in the name.
-
-You can see a short demo of the effects provided to both mods here:
-[https://www.youtube.com/watch?v=X15WuW8BiaM](https://www.youtube.com/watch?v=X15WuW8BiaM)
 
 ## Compilation / installation
 
-The mod uses BSIPA to hook into Beat Saber methods via Harmony, and uses the bHaptics library to interface the HTTP/TLS interface of the bHaptics Player.
-So BSIPA and the bHaptics library have to be installed on Beat Saber. It does not touch the game variables or functions and only
-hooks in to trigger feedback.
+The mod uses BSIPA to hook into Beat Saber methods, so you will need to have BSIPA installed on your Beat Saber installation. This is done most easily via [ModAssistant](https://github.com/Assistant/ModAssistant).
 
-The mod is built with Visual Studio 2019 and should just compile if the BSIPA modding tools are installed correctly.
+Then you will need to unzip the [latest release](https://github.com/floh-bhaptics/BeatSaber_OWO/releases/latest/) into your Beat Saber game directory (should contain the folders "Beat Saber_Data", "Libs", and "Plugins"). The ZIP file contains the OWO SDK (will be unzipped into the "Libs" folder) and the actual Mod DLL (will be unzipped into the "Plugins" folder).
