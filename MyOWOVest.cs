@@ -44,10 +44,9 @@ namespace MyOWOVest
         public TactsuitVR()
         {
             LOG("Initializing suit");
-            //OWO.AutoConnect();
-            OWO.Connect("192.168.1.183");
+            OWO.AutoConnect();
+            //OWO.Connect("192.168.1.183");
             Thread.Sleep(100);
-            RegisterAllTactFiles();
             if (OWO.IsConnected)
             {
                 suitDisabled = false;
@@ -55,6 +54,7 @@ namespace MyOWOVest
             }
             if (suitDisabled) LOG("Owo is not enabled?!?!");
 
+            RegisterAllTactFiles();
             LOG("Started up...");
             PlayBackFeedback("Start");
         }
@@ -80,15 +80,15 @@ namespace MyOWOVest
         void RegisterAllTactFiles()
         {
             if (suitDisabled) return;
+            LOG("Registering tact files...");
             ResourceSet resourceSet = OwoFunctional.Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture, true, true);
-
             foreach (DictionaryEntry d in resourceSet)
             {
+                LOG("Pattern registered: " + d.Key.ToString());
                 try
                 {
                     ISensation test = Sensation.FromCode(d.Value.ToString());
                     FeedbackMap.Add(d.Key.ToString(), test);
-                    LOG("Pattern registered: " + d.Key.ToString());
                 }
                 catch (Exception e) { LOG(e.ToString()); }
 
