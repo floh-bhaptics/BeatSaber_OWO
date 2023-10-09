@@ -22,6 +22,7 @@ namespace OwoFunctional
         public static OwoFunctional Instance { get; private set; }
 
         public static TactsuitVR tactsuitVr;
+        public static Stopwatch bombTimer = new Stopwatch();
         //public static bool inObstacle = false;
 
 
@@ -74,6 +75,7 @@ namespace OwoFunctional
             [HarmonyPostfix]
             public static void Postfix(NoteController noteController)
             {
+                if ((bombTimer.IsRunning) && (bombTimer.ElapsedMilliseconds <= 800)) return;
                 if (noteController.noteData.colorType != ColorType.None)
                     tactsuitVr.PlayBackFeedback("MissedNote");
 
@@ -86,7 +88,13 @@ namespace OwoFunctional
             [HarmonyPostfix]
             public static void Postfix()
             {
-                tactsuitVr.PlayBackFeedback("Explosion");
+                if (!bombTimer.IsRunning) bombTimer.Start();
+                else if (bombTimer.ElapsedMilliseconds <= 800) return;
+                else
+                {
+                    bombTimer.Restart();
+                    tactsuitVr.PlayBackFeedback("Explosion");
+                }
             }
         }
 
@@ -96,6 +104,7 @@ namespace OwoFunctional
             [HarmonyPostfix]
             public static void Postfix(Saber saber)
             {
+                if ((bombTimer.IsRunning) && (bombTimer.ElapsedMilliseconds <= 800)) return;
                 bool isRight = false;
                 if (saber.saberType == SaberType.SaberB) isRight = true;
                 tactsuitVr.Recoil(isRight);

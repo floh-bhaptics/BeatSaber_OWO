@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OwoFunctional</RootNamespace>
     <AssemblyName>OwoFunctional</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>portable</DebugType>
@@ -20,6 +20,7 @@
     <!--<PathMap>$(AppOutputBase)=X:\$(AssemblyName)\</PathMap>-->
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <Optimize>false</Optimize>
@@ -54,9 +55,9 @@
       <HintPath>D:\Games\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\GameplayCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="OWO">
-      <HintPath>D:\Games\Steam\steamapps\common\Beat Saber\Libs\OWO.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="OWO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\OWO.2.3.10\lib\net48\OWO.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -137,6 +138,7 @@
     <None Include="OwoSensations\RecoilBlade_L.owo" />
     <None Include="OwoSensations\RecoilBlade_R.owo" />
     <None Include="OwoSensations\Start.owo" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,7 +19,7 @@ namespace OwoFunctional.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,7 +61,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 100,10,81,100,500,0|2%100.
+        ///   Looks up a localized string similar to 100,1,90,0,0,0|0%100,1%100,3%100,2%100,7%100,6%100,9%100,8%100&amp;40,19,80,0,1697,0|0%100,1%100,3%100,2%100,7%100,6%100,8%100,9%100.
         /// </summary>
         internal static string Explosion {
             get {
@@ -88,7 +88,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 81,3,81,50,150,0|5%100,7%100.
+        ///   Looks up a localized string similar to 81,3,60,50,100,0|5%100,7%100.
         /// </summary>
         internal static string RecoilBlade_L {
             get {
@@ -97,7 +97,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 81,3,81,50,150,0|6%100,4%100.
+        ///   Looks up a localized string similar to 81,3,60,50,100,0|4%100,6%100.
         /// </summary>
         internal static string RecoilBlade_R {
             get {
@@ -106,7 +106,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 100,3,90,0,0,0|0%100,1%100&amp;100,3,90,0,0,0|0%100,1%100,5%100,4%100&amp;100,3,90,0,151,0|0%100,1%100,4%100,5%100,3%100,2%100&amp;100,19,90,0,1900,0|7%100,6%100,9%100,8%100.
+        ///   Looks up a localized string similar to 100,3,70,0,0,0|0%100,1%100&amp;100,3,70,0,0,0|0%100,1%100,5%100,4%100&amp;100,3,70,0,151,0|0%100,1%100,4%100,5%100,3%100,2%100&amp;100,19,60,0,1900,0|7%100,6%100,9%100,8%100.
         /// </summary>
         internal static string Start {
             get {

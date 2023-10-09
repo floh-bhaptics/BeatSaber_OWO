@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading;
-using OWOHaptic;
+using OWOGame;
 using OwoFunctional;
 using System.Resources;
 using System.Globalization;
@@ -23,7 +23,7 @@ namespace MyOWOVest
         public bool suitDisabled = true;
         public bool systemInitialized = false;
         // Event to start and stop the heartbeat thread
-        public Dictionary<String, ISensation> FeedbackMap = new Dictionary<String, ISensation>();
+        public Dictionary<String, Sensation> FeedbackMap = new Dictionary<String, Sensation>();
 
 
         /*
@@ -43,7 +43,6 @@ namespace MyOWOVest
 
         public TactsuitVR()
         {
-            RegisterAllTactFiles();
             InitializeOWO();
         }
 
@@ -59,6 +58,7 @@ namespace MyOWOVest
                 LOG("OWO suit connected.");
             }
             if (suitDisabled) LOG("Owo is not enabled?!?!");
+            RegisterAllTactFiles();
         }
 
         ~TactsuitVR()
