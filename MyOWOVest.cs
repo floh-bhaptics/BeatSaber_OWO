@@ -43,6 +43,7 @@ namespace MyOWOVest
 
         public TactsuitVR()
         {
+            RegisterAllTactFiles();
             InitializeOWO();
         }
 
@@ -50,16 +51,40 @@ namespace MyOWOVest
         {
             LOG("Initializing suit");
 
-            await OWO.AutoConnectAsync();
+            // New auth.
+            var gameAuth = GameAuth.Create(AllBakedSensations()).WithId("85963451");
 
-            if (OWO.IsConnected)
+            OWO.Configure(gameAuth);
+            await OWO.AutoConnect();
+
+            if (OWO.ConnectionState == ConnectionState.Connected)
             {
                 suitDisabled = false;
                 LOG("OWO suit connected.");
             }
             if (suitDisabled) LOG("Owo is not enabled?!?!");
-            RegisterAllTactFiles();
         }
+
+        private BakedSensation[] AllBakedSensations()
+        {
+            var result = new List<BakedSensation>();
+
+            foreach (var sensation in FeedbackMap.Values)
+            {
+                if (sensation is BakedSensation baked)
+                {
+                    LOG("Registered baked sensation: " + baked.name);
+                    result.Add(baked);
+                }
+                else
+                {
+                    LOG("Sensation not baked? " + sensation);
+                    continue;
+                }
+            }
+            return result.ToArray();
+        }
+
 
         ~TactsuitVR()
         {
@@ -89,7 +114,7 @@ namespace MyOWOVest
                 LOG("Pattern registered: " + d.Key.ToString());
                 try
                 {
-                    ISensation test = Sensation.FromCode(d.Value.ToString());
+                    Sensation test = Sensation.Parse(d.Value.ToString());
                     FeedbackMap.Add(d.Key.ToString(), test);
                 }
                 catch (Exception e) { LOG(e.ToString()); }
