@@ -3,9 +3,9 @@
   "id": "OwoFunctional",
   "name": "OwoFunctional",
   "author": "Florian Fahrenberger",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Adds functional (saber, notes, bombs, walls, ...) Owo haptic feedback support to Beat Saber",
-  "gameVersion": "1.25.0",
+  "gameVersion": "1.31.0",
   "dependsOn": {
     "BSIPA": "^4.2.2"
   }
