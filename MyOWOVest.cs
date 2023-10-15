@@ -20,7 +20,7 @@ namespace MyOWOVest
          * - A logging hook to output to the Melonloader log
          * - 
          * */
-        public bool suitDisabled = true;
+        public bool suitDisabled = false;
         public bool systemInitialized = false;
         // Event to start and stop the heartbeat thread
         public Dictionary<String, Sensation> FeedbackMap = new Dictionary<String, Sensation>();
