@@ -8,7 +8,7 @@ using OwoFunctional;
 using System.Resources;
 using System.Globalization;
 using System.Collections;
-
+using System.Net;
 
 namespace MyOWOVest
 {
@@ -55,7 +55,13 @@ namespace MyOWOVest
             var gameAuth = GameAuth.Create(AllBakedSensations()).WithId("85963451");
 
             OWO.Configure(gameAuth);
-            await OWO.AutoConnect();
+            string myIP = getIpFromFile("OWO_Manual_IP.txt");
+            if (myIP == "") await OWO.AutoConnect();
+            else
+            {
+                LOG("Found manual IP address: " + myIP);
+                await OWO.Connect(myIP);
+            }
 
             if (OWO.ConnectionState == ConnectionState.Connected)
             {
@@ -64,6 +70,20 @@ namespace MyOWOVest
             }
             if (suitDisabled) LOG("Owo is not enabled?!?!");
         }
+
+        public string getIpFromFile(string filename)
+        {
+            string ip = "";
+            string filePath = Path.Combine(IPA.Utilities.UnityGame.UserDataPath, filename);
+            if (File.Exists(filePath))
+            {
+                string fileBuffer = File.ReadAllText(filePath);
+                IPAddress address;
+                if (IPAddress.TryParse(fileBuffer, out address)) ip = fileBuffer;
+            }
+            return ip;
+        }
+
 
         private BakedSensation[] AllBakedSensations()
         {
