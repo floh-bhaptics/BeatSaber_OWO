@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define NOSLICE
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,8 @@ using System.Diagnostics;
 
 using HarmonyLib;
 using MyOWOVest;
+
+
 
 
 namespace OwoFunctional
@@ -98,6 +102,7 @@ namespace OwoFunctional
             }
         }
 
+#if !NOSLICE
         [HarmonyPatch(typeof(CuttableBySaber), "CallWasCutBySaberEvent", new Type[] { typeof(Saber), typeof(UnityEngine.Vector3), typeof(UnityEngine.Quaternion), typeof(UnityEngine.Vector3) })]
         public class bhaptics_NoteCut
         {
@@ -110,6 +115,7 @@ namespace OwoFunctional
                 tactsuitVr.Recoil(isRight);
             }
         }
+#endif
         
 
         [HarmonyPatch(typeof(PlayerHeadAndObstacleInteraction), "RefreshIntersectingObstacles", new Type[] { typeof(Vector3) })]
@@ -126,12 +132,24 @@ namespace OwoFunctional
                 }
             }
         }
-        
-        
+
+        [HarmonyPatch(typeof(LevelCompletionResultsHelper), "ProcessScore", new Type[] { typeof(PlayerData), typeof(PlayerLevelStatsData), typeof(LevelCompletionResults), typeof(IReadonlyBeatmapData), typeof(IDifficultyBeatmap), typeof(PlatformLeaderboardsModel) })]
+        public class bhaptics_LevelResults
+        {
+            [HarmonyPostfix]
+            public static void Postfix(LevelCompletionResults levelCompletionResults)
+            {
+                if (levelCompletionResults.levelEndStateType == LevelCompletionResults.LevelEndStateType.Cleared) tactsuitVr.PlayBackFeedback("Start");
+                if (levelCompletionResults.levelEndStateType == LevelCompletionResults.LevelEndStateType.Failed) tactsuitVr.PlayBackFeedback("LevelFailed");
+            }
+        }
+
+
+
 
         #endregion
 
-        
-        
+
+
     }
 }

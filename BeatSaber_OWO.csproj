@@ -134,6 +134,7 @@
     <None Include="BeatSaber_OWO.csproj.user" Condition="Exists('BeatSaber_BSIPA_bhaptics.csproj.user')" />
     <None Include="OwoSensations\Explosion.owo" />
     <None Include="OwoSensations\HitWall.owo" />
+    <None Include="OwoSensations\LevelFailed.owo" />
     <None Include="OwoSensations\MissedNote.owo" />
     <None Include="OwoSensations\RecoilBlade_L.owo" />
     <None Include="OwoSensations\RecoilBlade_R.owo" />

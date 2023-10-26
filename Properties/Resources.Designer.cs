@@ -79,6 +79,15 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 6~LevelFailed~10,20,100,0,1300,0,Death|0%100,1%100,3%100,2%100,7%100,6%100,8%100,9%100,5%100,4%100~default~Default.
+        /// </summary>
+        internal static string LevelFailed {
+            get {
+                return ResourceManager.GetString("LevelFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 2~MissedNote~50,3,72,0,200,0,|9%100,8%100~impact-10~.
         /// </summary>
         internal static string MissedNote {
