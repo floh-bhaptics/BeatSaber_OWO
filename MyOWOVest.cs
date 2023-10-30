@@ -126,7 +126,7 @@ namespace MyOWOVest
 
         void RegisterAllTactFiles()
         {
-            if (suitDisabled) return;
+            //if (suitDisabled) return;
             LOG("Registering tact files...");
             ResourceSet resourceSet = OwoFunctional.Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture, true, true);
             foreach (DictionaryEntry d in resourceSet)

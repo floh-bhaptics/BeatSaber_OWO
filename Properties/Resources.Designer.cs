@@ -61,7 +61,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0~Explosion~100,1,90,0,0,0,|0%100,1%100,3%100,2%100,7%100,6%100,9%100,8%100&amp;40,19,80,0,1700,0,|0%100,1%100,3%100,2%100,7%100,6%100,8%100,9%100~impact-6~.
+        ///   Looks up a localized string similar to 0~Explosion~100,1,90,0,0,0,|0%100,1%100,3%100,2%100,7%100,6%100,9%100,8%100&amp;40,19,80,0,1700,0,|0%100,1%100,3%100,2%100,7%100,6%100,8%100,9%100~impact-6~Beat Saber.
         /// </summary>
         internal static string Explosion {
             get {
@@ -70,7 +70,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1~HitWall~30,2,80,0,0,0,|0%100,1%100,2%100,3%100~impact-2~.
+        ///   Looks up a localized string similar to 1~HitWall~30,2,80,0,0,0,|0%100,1%100,2%100,3%100~impact-2~Beat Saber.
         /// </summary>
         internal static string HitWall {
             get {
@@ -79,7 +79,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 6~LevelFailed~10,20,100,0,1300,0,Death|0%100,1%100,3%100,2%100,7%100,6%100,8%100,9%100,5%100,4%100~default~Default.
+        ///   Looks up a localized string similar to 6~LevelFailed~10,20,100,0,1300,0,Death|0%100,1%100,3%100,2%100,7%100,6%100,8%100,9%100,5%100,4%100~default~Beat Saber.
         /// </summary>
         internal static string LevelFailed {
             get {
@@ -88,7 +88,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2~MissedNote~50,3,72,0,200,0,|9%100,8%100~impact-10~.
+        ///   Looks up a localized string similar to 2~MissedNote~50,3,72,0,200,0,|9%100,8%100~impact-10~Beat Saber.
         /// </summary>
         internal static string MissedNote {
             get {
@@ -97,7 +97,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 3~RecoilBlade_L~81,3,60,100,100,0,|5%100,7%100~weapon-4~.
+        ///   Looks up a localized string similar to 3~RecoilBlade_L~81,3,60,100,100,0,|5%100,7%100~weapon-4~Beat Saber.
         /// </summary>
         internal static string RecoilBlade_L {
             get {
@@ -106,7 +106,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 4~RecoilBlade_R~81,3,60,100,100,0,|4%100,6%100~weapon-4~.
+        ///   Looks up a localized string similar to 4~RecoilBlade_R~81,3,60,100,100,0,|4%100,6%100~weapon-4~Beat Saber.
         /// </summary>
         internal static string RecoilBlade_R {
             get {
@@ -115,7 +115,7 @@ namespace OwoFunctional.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 5~Start~100,3,70,0,0,0,|0%100,1%100&amp;100,3,70,0,0,0,|0%100,1%100,5%100,4%100&amp;100,3,70,0,200,0,|0%100,1%100,4%100,5%100,3%100,2%100&amp;100,19,60,0,1900,0,|7%100,6%100,9%100,8%100~magic-2~.
+        ///   Looks up a localized string similar to 5~Start~100,3,70,0,0,0,|0%100,1%100&amp;100,3,70,0,0,0,|0%100,1%100,5%100,4%100&amp;100,3,70,0,200,0,|0%100,1%100,4%100,5%100,3%100,2%100&amp;100,19,60,0,1900,0,|7%100,6%100,9%100,8%100~magic-2~Beat Saber.
         /// </summary>
         internal static string Start {
             get {

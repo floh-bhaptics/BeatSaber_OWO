@@ -1,4 +1,4 @@
-﻿//#define NOSLICE
+﻿#define NOSLICE
 
 using System;
 using System.Collections;
