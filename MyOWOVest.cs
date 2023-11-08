@@ -55,12 +55,11 @@ namespace MyOWOVest
             var gameAuth = GameAuth.Create(AllBakedSensations()).WithId("85963451");
 
             OWO.Configure(gameAuth);
-            string myIP = getIpFromFile("OWO_Manual_IP.txt");
-            if (myIP == "") await OWO.AutoConnect();
+            string[] myIPs = getIPsFromFile("OWO_Manual_IP.txt");
+            if (myIPs.Length == 0) await OWO.AutoConnect();
             else
             {
-                LOG("Found manual IP address: " + myIP);
-                await OWO.Connect(myIP);
+                await OWO.Connect(myIPs);
             }
 
             if (OWO.ConnectionState == ConnectionState.Connected)
@@ -71,17 +70,22 @@ namespace MyOWOVest
             if (suitDisabled) LOG("Owo is not enabled?!?!");
         }
 
-        public string getIpFromFile(string filename)
+        public string[] getIPsFromFile(string filename)
         {
-            string ip = "";
-            string filePath = Path.Combine(IPA.Utilities.UnityGame.UserDataPath, filename);
+            List<string> ips = new List<string>();
+            string filePath = Directory.GetCurrentDirectory() + "\\Mods\\" + filename;
             if (File.Exists(filePath))
             {
-                string fileBuffer = File.ReadAllText(filePath);
-                IPAddress address;
-                if (IPAddress.TryParse(fileBuffer, out address)) ip = fileBuffer;
+                LOG("Manual IP file found: " + filePath);
+                var lines = File.ReadLines(filePath);
+                foreach (var line in lines)
+                {
+                    IPAddress address;
+                    if (IPAddress.TryParse(line, out address)) ips.Add(line);
+                    else LOG("IP not valid? ---" + line + "---");
+                }
             }
-            return ip;
+            return ips.ToArray();
         }
 
 
